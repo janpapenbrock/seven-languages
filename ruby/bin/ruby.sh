@@ -2,4 +2,9 @@
 
 bin/build.sh
 
-docker run ruby ruby $*
+docker run \
+  --rm \
+  -v "$PWD":/app \
+  -w /app \
+  ruby \
+  ruby $*

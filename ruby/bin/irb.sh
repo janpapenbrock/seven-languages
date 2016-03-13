@@ -2,4 +2,10 @@
 
 bin/build.sh
 
-docker run -it ruby irb $*
+docker run \
+  --rm \
+  -v "$PWD":/app \
+  -w /app \
+  -it \
+  ruby \
+  irb $*
