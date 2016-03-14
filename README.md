@@ -19,3 +19,5 @@ Make programming fun again.
     bin/ruby.sh day-2/print-16-each-slice.rb
     
     bin/ruby.sh day-2/tree-init.rb
+    
+    bin/ruby.sh day-2/grep.rb day-2/grep-values.txt foo
