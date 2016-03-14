@@ -13,3 +13,5 @@ Make programming fun again.
     bin/ruby.sh day-1/guess.rb
 
     # Day 2
+    bin/ruby.sh day-2/print-16-each.rb
+    bin/ruby.sh day-2/print-16-each-slice.rb
