@@ -4,7 +4,6 @@ module ActsAsCsv
     base.extend ClassMethods
   end
 
-
   module ClassMethods
     def acts_as_csv
       include InstanceMethods
@@ -27,6 +26,26 @@ module ActsAsCsv
     def initialize
       read
     end
+
+    def rows
+      @rows = @rows ||@csv_contents.collect do |row|
+        CsvRow.new(row, @headers)
+      end
+    end
+
+    def each &block
+      rows.each &block
+    end
+  end
+end
+
+class CsvRow
+  def initialize values, keys
+    @lookup = Hash[keys.zip(values)]
+  end
+
+  def method_missing name
+    puts @lookup[name.to_s]
   end
 end
 
@@ -38,3 +57,6 @@ end
 m = RubyCsv.new
 puts m.headers.inspect
 puts m.csv_contents.inspect
+
+m.each {|row| puts row.one}
+m.each {|row| puts row.two}
