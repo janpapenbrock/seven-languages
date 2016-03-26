@@ -28,7 +28,7 @@ module ActsAsCsv
     end
 
     def rows
-      @rows = @rows ||@csv_contents.collect do |row|
+      @rows = @rows || @csv_contents.collect do |row|
         CsvRow.new(row, @headers)
       end
     end
@@ -45,7 +45,7 @@ class CsvRow
   end
 
   def method_missing name
-    puts @lookup[name.to_s]
+    @lookup[name.to_s]
   end
 end
 
