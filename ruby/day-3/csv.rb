@@ -45,7 +45,7 @@ class CsvRow
   end
 
   def method_missing name
-    puts @lookup[name.to_s]
+    @lookup[name.to_s]
   end
 end
 
