@@ -21,3 +21,8 @@ Make programming fun again.
     bin/ruby.sh day-2/tree-init.rb
     
     bin/ruby.sh day-2/grep.rb day-2/grep-values.txt foo
+
+
+    # Day 3
+    cd day-3
+    ../bin/ruby.sh csv.rb
