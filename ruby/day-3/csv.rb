@@ -28,7 +28,7 @@ module ActsAsCsv
     end
 
     def rows
-      @rows = @rows ||@csv_contents.collect do |row|
+      @rows = @rows || @csv_contents.collect do |row|
         CsvRow.new(row, @headers)
       end
     end
